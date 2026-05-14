@@ -394,43 +394,7 @@ document.addEventListener('click', (e) => {
    11. SERIES TIMELINE — SCROLL-DRIVEN BACKGROUND + LINE DRAWING
    ================================================================ */
 (function initTimeline() {
-  const seriesSection = qs('#series');
-  const lineEl        = qs('.timeline-draw');
-  const zoneMarker    = qs('#zone-transition-marker');
-  if (!seriesSection) return;
-
-  /* -- Background color transition cream → dark -- */
-  if (!prefersReducedMotion && zoneMarker) {
-    ScrollTrigger.create({
-      trigger: zoneMarker,
-      start: 'top 70%',
-      end: 'top 20%',
-      scrub: 1,
-      onUpdate: (self) => {
-        const p = self.progress;
-
-        // Interpolate #F5F0E8 → #1A1714
-        const startR = 245, startG = 240, startB = 232;
-        const endR   =  26, endG   =  23, endB   =  20;
-
-        const cr = Math.round(lerp(startR, endR, p));
-        const cg = Math.round(lerp(startG, endG, p));
-        const cb = Math.round(lerp(startB, endB, p));
-
-        seriesSection.style.backgroundColor = `rgb(${cr},${cg},${cb})`;
-
-        // Fade section label and title text on transition
-        const label = qs('#series-label');
-        const title = qs('#series-title');
-        if (label) label.style.color = p > 0.5
-          ? 'rgba(201,168,76,1)'
-          : 'rgba(123,31,46,1)';
-        if (title) title.style.color = p > 0.4
-          ? 'var(--color-texto-inv)'
-          : 'var(--color-texto)';
-      },
-    });
-  }
+  const lineEl = qs('.timeline-draw');
 
   /* -- SVG timeline line draw -- */
   if (!prefersReducedMotion && lineEl) {
@@ -477,7 +441,7 @@ document.addEventListener('click', (e) => {
     });
   }
 
-  function lerp(a, b, t) { return a + (b - a) * t; }
+
 })();
 
 /* ================================================================

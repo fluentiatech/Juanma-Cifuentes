@@ -869,7 +869,23 @@ input, textarea, select {
 /* ── 14. SERIES — TIMELINE ────────────────────────────────── */
 .series {
   background: var(--color-fondo);
-  transition: background-color 0.1s linear;
+}
+
+/* Zona 1 fija crema, zona 2 y marcador oscuros — full-bleed via ::before */
+.timeline-zone-transition,
+.timeline-zone--2 {
+  position: relative;
+  isolation: isolate;
+}
+.timeline-zone-transition::before,
+.timeline-zone--2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -9999px;
+  right: -9999px;
+  background: var(--color-fondo-alt);
+  z-index: -1;
 }
 
 .timeline-wrapper {
@@ -1051,7 +1067,7 @@ input, textarea, select {
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-texto-suave);
+  color: rgba(245,240,232,0.5);
 }
 .zone-transition-year {
   font-family: var(--font-display);
