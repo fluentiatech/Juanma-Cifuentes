@@ -31,7 +31,12 @@
 
 /* ── 2. RESET ─────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* contiene overflow en el scroll-container real */
+}
 body {
   background-color: var(--color-fondo);
   color: var(--color-texto);
@@ -869,6 +874,7 @@ input, textarea, select {
 /* ── 14. SERIES — TIMELINE ────────────────────────────────── */
 .series {
   background: var(--color-fondo);
+  overflow-x: clip;
 }
 
 /* Zona 2 y marcador oscuros — full-bleed via ::before sin isolation */
@@ -882,8 +888,9 @@ input, textarea, select {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -9999px;
-  right: -9999px;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
   background: var(--color-fondo-alt);
   z-index: -1;
   pointer-events: none;
