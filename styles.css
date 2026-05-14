@@ -873,27 +873,27 @@ input, textarea, select {
 
 /* ── 14. SERIES — TIMELINE ────────────────────────────────── */
 .series {
-  background: var(--color-fondo);
-  overflow-x: clip;
+  background: transparent;
 }
 
-/* Zona 2 y marcador oscuros — full-bleed via ::before sin isolation */
-.timeline-zone-transition,
-.timeline-zone--2 {
-  position: relative;
+/* Bandas de la sección series — full-width naturalmente como hijas directas */
+.series-band--light { background: var(--color-fondo); }
+.series-band--dark  { background: var(--color-fondo-alt); }
+
+.series-band-inner {
+  max-width: var(--inner-max);
+  margin: 0 auto;
+  padding-left: calc(var(--nav-sidebar-w) + clamp(2rem, 4vw, 4rem));
+  padding-right: clamp(1.5rem, 5vw, 4rem);
 }
-.timeline-zone-transition::before,
-.timeline-zone--2::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
-  background: var(--color-fondo-alt);
-  z-index: -1;
-  pointer-events: none;
+.series-band--light .series-band-inner { padding-top: var(--section-pad); }
+.series-band--dark  .series-band-inner { padding-bottom: var(--section-pad); }
+
+@media (max-width: 1023px) {
+  .series-band-inner {
+    padding-left: clamp(1.25rem, 4vw, 2rem);
+    padding-right: clamp(1.25rem, 4vw, 2rem);
+  }
 }
 
 .timeline-wrapper {

@@ -334,18 +334,13 @@
 
     <!-- ── SERIES ───────────────────────── -->
     <section id="series" class="section series">
-      <div class="section-inner">
-        <div class="section-header-row">
-          <span class="section-label" id="series-label">Trayectoria</span>
-          <h2 class="section-title" id="series-title">Series y Televisión</h2>
-        </div>
 
-        <!-- Zone marker for GSAP color transition -->
-        <div class="timeline-wrapper">
-          <div class="timeline-line" aria-hidden="true">
-            <svg class="timeline-svg" viewBox="0 0 2 1000" preserveAspectRatio="none" aria-hidden="true">
-              <line class="timeline-draw" x1="1" y1="0" x2="1" y2="1000" stroke="currentColor" stroke-width="2"/>
-            </svg>
+      <!-- BANDA CREMA — cabecera + TV generalista -->
+      <div class="series-band series-band--light">
+        <div class="series-band-inner">
+          <div class="section-header-row">
+            <span class="section-label" id="series-label">Trayectoria</span>
+            <h2 class="section-title" id="series-title">Series y Televisión</h2>
           </div>
 
           <!-- ZONA 1 — TV GENERALISTA -->
@@ -406,7 +401,13 @@
             </div>
           </div>
 
-          <!-- Zona transition marker -->
+        </div><!-- /series-band-inner light -->
+      </div><!-- /series-band--light -->
+
+      <!-- BANDA OSCURA — transición + plataformas premium -->
+      <div class="series-band series-band--dark">
+        <div class="series-band-inner">
+
           <div class="timeline-zone-transition" id="zone-transition-marker" aria-hidden="true">
             <div class="zone-transition-label">
               <span>Plataformas Premium</span>
@@ -490,9 +491,11 @@
                 <div class="timeline-meta"><span class="timeline-channel">Prime Video</span><span class="timeline-genre">Comedia / Drama</span></div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </div><!-- /timeline-zone--2 -->
+
+        </div><!-- /series-band-inner dark -->
+      </div><!-- /series-band--dark -->
+
     </section>
 
     <!-- ── TEATRO ───────────────────────── -->
