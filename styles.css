@@ -880,6 +880,13 @@ input, textarea, select {
 .series-band--light { background: var(--color-fondo); }
 .series-band--dark  { background: var(--color-fondo-alt); }
 
+/* Gradiente de transición entre bandas */
+.series-band-seam {
+  height: 7rem;
+  background: linear-gradient(to bottom, var(--color-fondo), var(--color-fondo-alt));
+  /* El estado inicial (opacity:0) lo aplica GSAP; sin JS se muestra siempre */
+}
+
 .series-band-inner {
   max-width: var(--inner-max);
   margin: 0 auto;
@@ -887,7 +894,10 @@ input, textarea, select {
   padding-right: clamp(1.5rem, 5vw, 4rem);
 }
 .series-band--light .series-band-inner { padding-top: var(--section-pad); }
-.series-band--dark  .series-band-inner { padding-bottom: var(--section-pad); }
+.series-band--dark  .series-band-inner {
+  padding-top: 2rem;
+  padding-bottom: var(--section-pad);
+}
 
 @media (max-width: 1023px) {
   .series-band-inner {

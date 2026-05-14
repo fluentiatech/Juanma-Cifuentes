@@ -441,6 +441,44 @@ document.addEventListener('click', (e) => {
     });
   }
 
+  /* -- Transición crema→oscuro animada con scroll -- */
+  const seam     = qs('.series-band-seam');
+  const darkBand = qs('.series-band--dark');
+
+  if (seam) {
+    if (!prefersReducedMotion) {
+      gsap.fromTo(seam,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: seam,
+            start: 'top 95%',
+            end: 'bottom 40%',
+            scrub: 1,
+          },
+        }
+      );
+    }
+  }
+
+  if (darkBand && !prefersReducedMotion) {
+    gsap.fromTo(darkBand.querySelector('.series-band-inner'),
+      { opacity: 0, y: 18 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.85,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: darkBand,
+          start: 'top 72%',
+          once: true,
+        },
+      }
+    );
+  }
 
 })();
 
