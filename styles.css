@@ -871,21 +871,22 @@ input, textarea, select {
   background: var(--color-fondo);
 }
 
-/* Zona 1 fija crema, zona 2 y marcador oscuros — full-bleed via ::before */
+/* Zona 2 y marcador oscuros — full-bleed via ::before sin isolation */
 .timeline-zone-transition,
 .timeline-zone--2 {
   position: relative;
-  isolation: isolate;
 }
 .timeline-zone-transition::before,
 .timeline-zone--2::before {
   content: '';
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
   left: -9999px;
   right: -9999px;
   background: var(--color-fondo-alt);
   z-index: -1;
+  pointer-events: none;
 }
 
 .timeline-wrapper {
