@@ -2153,8 +2153,9 @@ input, textarea, select {
   letter-spacing:.14em;font-size:.84rem;padding:.95em 1.7em;border-radius:3px;
   transition:transform var(--t-base) var(--ease-out),background var(--t-base)}
 .el18-cta:hover{transform:translateY(-3px);background:var(--c-oro-hi)}
-.el18-mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1.2fr 1fr 0.9fr;
-  gap:.75rem;height:clamp(500px,72vh,740px)}
+.el18-mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1.2fr 1fr 0.7fr;
+  gap:.75rem;height:clamp(520px,74vh,760px)}
+.el18-ph--wide{grid-column:span 2}
 .el18-ph{position:relative;overflow:hidden;border:2px solid rgba(224,195,106,.35);
   border-radius:4px;background:#000}
 .el18-ph:first-child{grid-row:span 2}
@@ -2189,9 +2190,14 @@ input, textarea, select {
 
 /* Tres pilares */
 .el18-pilares-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.el18-pilar{border:1px solid rgba(224,195,106,.28);border-radius:6px;
+.el18-pilar{border:1px solid rgba(224,195,106,.28);border-radius:6px;overflow:hidden;
   padding:clamp(1.4rem,3vw,2rem);background:rgba(255,255,255,.04);
   transition:border-color var(--t-base),background var(--t-base)}
+.el18-pilar-img{margin:-clamp(1.4rem,3vw,2rem) -clamp(1.4rem,3vw,2rem) clamp(1rem,2vw,1.4rem);
+  aspect-ratio:4/3;overflow:hidden}
+.el18-pilar-img img{width:100%;height:100%;object-fit:cover;
+  filter:saturate(.85) contrast(1.05);transition:transform var(--t-slow) var(--ease-out)}
+.el18-pilar:hover .el18-pilar-img img{transform:scale(1.05)}
 .el18-pilar:hover{border-color:rgba(224,195,106,.65);background:rgba(255,255,255,.07)}
 .el18-pilar-num{font-family:var(--font-display);font-weight:900;font-style:italic;
   font-size:3rem;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--color-oro);margin-bottom:.3em}
