@@ -2200,7 +2200,7 @@ input, textarea, select {
 .el18-pilar:hover .el18-pilar-img img{transform:scale(1.05)}
 .el18-pilar-collage{margin:-clamp(1.4rem,3vw,2rem) -clamp(1.4rem,3vw,2rem) clamp(1rem,2vw,1.4rem);
   display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;
-  gap:3px;aspect-ratio:4/3;overflow:hidden}
+  gap:3px;aspect-ratio:1/1;overflow:hidden}
 .el18-pilar-collage img{width:100%;height:100%;object-fit:cover;
   filter:saturate(.85) contrast(1.05);transition:transform var(--t-slow) var(--ease-out)}
 .el18-pilar:hover .el18-pilar-collage img{transform:scale(1.04)}
