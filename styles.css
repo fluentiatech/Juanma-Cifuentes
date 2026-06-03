@@ -2137,9 +2137,8 @@ input, textarea, select {
 .el18 .section-label{color:var(--c-oro-hi)}
 .el18-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);
   align-items:center;position:relative;z-index:1}
-.el18-numero{font-family:var(--font-display);font-weight:900;font-style:italic;
-  font-size:clamp(5rem,16vw,11rem);line-height:.8;color:transparent;
-  -webkit-text-stroke:2px var(--color-oro);margin-bottom:.1em}
+.el18-logo-img{width:min(280px,75%);height:auto;display:block;margin-bottom:.6em;
+  filter:drop-shadow(0 0 18px rgba(224,195,106,.18))}
 .el18-title{font-family:var(--font-display);font-weight:700;
   font-size:clamp(2rem,5.5vw,3.6rem);line-height:1.05;margin:.1em 0 .6em}
 .el18-title em{color:var(--c-oro-hi);font-style:italic}
@@ -2154,8 +2153,8 @@ input, textarea, select {
   letter-spacing:.14em;font-size:.84rem;padding:.95em 1.7em;border-radius:3px;
   transition:transform var(--t-base) var(--ease-out),background var(--t-base)}
 .el18-cta:hover{transform:translateY(-3px);background:var(--c-oro-hi)}
-.el18-mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1.2fr 1fr;
-  gap:.75rem;height:clamp(340px,52vh,560px)}
+.el18-mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1.2fr 1fr 0.9fr;
+  gap:.75rem;height:clamp(500px,72vh,740px)}
 .el18-ph{position:relative;overflow:hidden;border:2px solid rgba(224,195,106,.35);
   border-radius:4px;background:#000}
 .el18-ph:first-child{grid-row:span 2}
