@@ -922,7 +922,7 @@ window.addEventListener('resize', () => {
     {y:2023,t:"He pescado",m:"Cine · Cortometraje",type:"cine",side:"down",img:"public/HePescado.jpeg"},
     {y:2018,t:"El club de los buenos infieles",m:"Cine · Juan · Netflix",type:"cine",side:"down",img:"C3.jpg"},
     /* — TV — */
-    {y:2025,t:"Sin Gluten",m:"TV · TVE",type:"tv",side:"down",img:null},
+    {y:2025,t:"Sin Gluten",m:"TV · TVE",type:"tv",side:"down",img:"public/SinGluten.jpeg"},
     {y:2025,t:"Custodia repartida",m:"TV · Disney+ · Fesser",type:"tv",side:"up",img:null},
     {y:2025,t:"Atasco",m:"TV · Prime Video",type:"tv",side:"down",img:"public/Atasco.jpeg"},
     {y:2024,t:"Nos vemos en otra vida",m:"TV · Tenete · Disney+",type:"tv",side:"down",img:null},
@@ -1402,4 +1402,12 @@ window.addEventListener('resize', () => {
    posiciones si la página cargó con scroll distinto de 0 */
 window.addEventListener('load', () => {
   if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+});
+
+/* Protección básica contra descarga de imágenes */
+document.addEventListener('contextmenu', e => {
+  if (e.target.tagName === 'IMG') e.preventDefault();
+});
+document.addEventListener('dragstart', e => {
+  if (e.target.tagName === 'IMG') e.preventDefault();
 });
