@@ -229,12 +229,12 @@ input, textarea, select {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 56px;
-  background: rgba(26,23,20,.92);
+  background: rgba(245,240,232,.96);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-linea);
+  border-bottom: 1px solid rgba(123,31,46,.18);
   align-items: center;
-  padding: 0 60px 0 1.25rem; /* right padding leaves space for hamburger */
+  justify-content: center;
   z-index: 499;
 }
 .mobile-topbar-logo {
@@ -247,7 +247,7 @@ input, textarea, select {
   padding: .25rem .5rem;
   transition: background var(--t-base), color var(--t-base);
 }
-.mobile-topbar-logo:hover { background: var(--color-acento); color: var(--color-texto-inv); }
+.mobile-topbar-logo:hover { background: var(--color-acento); color: var(--color-fondo); }
 
 .drawer-logo {
   position: absolute;
