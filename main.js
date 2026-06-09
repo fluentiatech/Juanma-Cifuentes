@@ -52,6 +52,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
    2. SCROLL PROGRESS BAR
    ================================================================ */
 (function initScrollProgress() {
+  if (typeof gsap === 'undefined') return;
   const bar = qs('.scroll-progress');
   if (!bar) return;
 
@@ -69,6 +70,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
    3. NAVIGATION — SIDEBAR ACTIVE DOTS
    ================================================================ */
 (function initSidebarNav() {
+  if (typeof gsap === 'undefined') return;
   const dots    = qsa('.nav-dot');
   const sections = qsa('main section[id]');
   if (!dots.length) return;
@@ -150,7 +152,7 @@ document.addEventListener('click', (e) => {
    6. HERO ANIMATIONS
    ================================================================ */
 (function initHeroAnimations() {
-  if (prefersReducedMotion) return;
+  if (typeof gsap === 'undefined' || prefersReducedMotion) return;
 
   const lines   = qsa('.hero-name-line');
   const pre     = qs('.hero-pre');
@@ -224,6 +226,7 @@ document.addEventListener('click', (e) => {
    7. GENERIC SECTION REVEAL (opacity + translateY)
    ================================================================ */
 (function initSectionReveals() {
+  if (typeof gsap === 'undefined') return;
   if (prefersReducedMotion) return;
 
   qsa('.section-title, .section-label, .section-header-row').forEach((el) => {
@@ -892,6 +895,7 @@ function trapFocus(container) {
    ================================================================ */
 let resizeTimer;
 window.addEventListener('resize', () => {
+  if (typeof gsap === 'undefined') return;
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => ScrollTrigger.refresh(), 250);
 });
