@@ -949,7 +949,7 @@ window.addEventListener('resize', () => {
     {y:2002,t:"Sádicamente Sade",m:"Teatro · Fabrice · Pereira",type:"teatro",side:"down",img:null},
     {y:2000,t:"La tentación vive arriba",m:"Teatro · Bobadilla · Forqué",type:"teatro",side:"down",img:null},
     {y:1994,t:"Fuenteovejuna",m:"Teatro · Mengo · Marsillach",type:"teatro",side:"up",img:"public/Fuenteovejuna.jpeg"},
-    {y:1992,t:"La gran sultana",m:"Teatro · Mustafá · Marsillach",type:"teatro",side:"up",img:null},
+    {y:1992,t:"La gran sultana",m:"Teatro · Mustafá · Marsillach",type:"teatro",side:"up",img:"public/LaGranSultana.jpeg"},
     {y:1992,t:"Othello",m:"Teatro · Othello · S. Hutton",type:"teatro",side:"down",img:null},
     /* — ZARZUELA Y ÓPERA — */
     {y:2018,t:"Alí Babá",m:"Zarzuela · Musical",type:"zarzuela",side:"up",img:"public/AliBaba.jpeg"},
