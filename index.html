@@ -923,6 +923,11 @@
                 <span class="form-error" id="error-mensaje" role="alert" aria-live="polite"></span>
               </div>
 
+              <div class="form-group form-check-group">
+                <input class="form-checkbox" type="checkbox" id="campo-rgpd" name="rgpd" required aria-required="true">
+                <label class="form-check-label" for="campo-rgpd">He leído y acepto la <a href="politica-privacidad.html" target="_blank" rel="noopener noreferrer">Política de Privacidad</a></label>
+              </div>
+
               <button type="submit" class="btn-submit" id="btn-submit">
                 <span class="btn-submit-text">Enviar mensaje</span>
                 <span class="btn-submit-loading" aria-hidden="true">
@@ -977,6 +982,19 @@
     </section>
 
   </main>
+
+  <!-- ── DESCARGA CONFIRMAR (móvil) ───── -->
+  <div id="foto-confirm" class="foto-confirm" role="dialog" aria-modal="true" aria-label="Confirmar descarga" hidden>
+    <div class="foto-confirm-backdrop" id="foto-confirm-backdrop"></div>
+    <div class="foto-confirm-box">
+      <img class="foto-confirm-preview" src="" alt="Vista previa">
+      <p class="foto-confirm-msg">¿Descargar esta fotografía?</p>
+      <div class="foto-confirm-btns">
+        <button class="foto-confirm-cancel" id="foto-confirm-cancel">Cancelar</button>
+        <a class="foto-confirm-ok" id="foto-confirm-ok" download>Descargar</a>
+      </div>
+    </div>
+  </div>
 
   <!-- ── FOOTER ────────────────────────── -->
   <footer class="site-footer" itemscope itemtype="https://schema.org/Person">
@@ -1034,6 +1052,7 @@
       <div class="footer-bottom">
         <p class="footer-copy">© <time datetime="2026">2026</time> Juanma Cifuentes · Actor y Tenor Cómico · Albacete, España</p>
         <p class="footer-legal">Representación: <a href="https://unicarepresentaciones.com/actores/juanma-cifuentes/" target="_blank" rel="noopener noreferrer">Única Representaciones</a> · <a href="https://www.imdb.com/name/nm1163864/" target="_blank" rel="noopener noreferrer">IMDb nm1163864</a></p>
+        <p class="footer-legal"><a href="aviso-legal.html">Aviso Legal</a> · <a href="politica-privacidad.html">Política de Privacidad</a></p>
         <p class="footer-crafted">Crafted with <a href="https://fluentiatech.es" target="_blank" rel="noopener noreferrer" class="fluentia-link"><img src="public/fluentia_clean.png" alt="fluentIA" class="fluentia-logo"></a> Precision</p>
       </div>
 

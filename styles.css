@@ -1950,6 +1950,33 @@ input, textarea, select {
 .form-select option { background: var(--color-fondo-alt); color: var(--color-texto-inv); }
 .form-textarea { resize: vertical; min-height: 140px; }
 
+.form-check-group {
+  display: flex;
+  align-items: flex-start;
+  gap: .65rem;
+  margin-top: -.25rem;
+}
+.form-checkbox {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: .1rem;
+  accent-color: var(--color-acento);
+  cursor: pointer;
+}
+.form-check-label {
+  font-family: var(--font-body);
+  font-size: .78rem;
+  color: rgba(245,240,232,.5);
+  line-height: 1.5;
+}
+.form-check-label a {
+  color: rgba(201,168,76,.7);
+  text-decoration: underline;
+  transition: color var(--t-base);
+}
+.form-check-label a:hover { color: var(--color-acento-claro); }
+
 .form-error {
   font-family: var(--font-label);
   font-size: 0.62rem;
@@ -2007,6 +2034,71 @@ input, textarea, select {
 }
 .form-status.error { color: var(--color-acento-claro); }
 .form-status.success { color: #6fc98a; }
+
+/* ── Confirmación descarga móvil ─────────────────────────── */
+.foto-confirm { position: fixed; inset: 0; z-index: 800; display: flex; align-items: flex-end; justify-content: center; }
+.foto-confirm[hidden] { display: none; }
+.foto-confirm-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.55); }
+.foto-confirm-box {
+  position: relative;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  border-radius: 16px 16px 0 0;
+  padding: 1.5rem 1.5rem 2.5rem;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  animation: sheetUp .25s var(--ease-out);
+}
+@keyframes sheetUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+.foto-confirm-preview {
+  width: 100%;
+  max-height: 45vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.foto-confirm-msg {
+  font-family: var(--font-label);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--color-texto-sec);
+}
+.foto-confirm-btns {
+  display: flex;
+  gap: .75rem;
+  width: 100%;
+}
+.foto-confirm-cancel {
+  flex: 1;
+  padding: .85rem;
+  border: 1px solid rgba(26,23,20,.2);
+  border-radius: 6px;
+  background: transparent;
+  font-family: var(--font-label);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--color-texto-sec);
+}
+.foto-confirm-ok {
+  flex: 2;
+  padding: .85rem;
+  border-radius: 6px;
+  background: var(--color-acento);
+  color: var(--color-fondo);
+  font-family: var(--font-label);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
 
 /* ── Galería fotos descargables (contacto) ────────────────── */
 .contacto-fotos {
