@@ -1872,24 +1872,32 @@ input, textarea, select {
 .rrss-link:hover { color: var(--color-texto-inv); }
 .rrss-link svg { width: 16px; height: 16px; }
 
+.contacto-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+
 .btn-cv-download {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  margin-top: 2rem;
-  padding: 0.8rem 1.4rem;
+  gap: 0.4rem;
+  margin-top: 0;
+  padding: 0.35rem 0.7rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 3px;
   background: var(--color-fondo);
   color: var(--color-texto);
   font-family: var(--font-label);
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
   transition: background var(--t-base), color var(--t-base), transform var(--t-base);
 }
-.btn-cv-download svg { width: 15px; height: 15px; flex-shrink: 0; }
+.btn-cv-download svg { width: 13px; height: 13px; flex-shrink: 0; }
 .btn-cv-download:hover {
   background: #ede5d6;
   transform: translateY(-2px);
