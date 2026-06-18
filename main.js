@@ -145,7 +145,9 @@ document.addEventListener('click', (e) => {
   const target = qs(anchor.getAttribute('href'));
   if (!target) return;
   e.preventDefault();
-  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const mobileOffset = window.innerWidth < 1024 ? 56 : 0;
+  const top = target.getBoundingClientRect().top + window.scrollY - mobileOffset;
+  window.scrollTo({ top, behavior: 'smooth' });
 });
 
 /* ================================================================
