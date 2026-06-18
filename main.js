@@ -1328,6 +1328,9 @@ window.addEventListener('resize', () => {
   const inner = qs('.hq-inner');
   if (!left || !right) return;
 
+  // En móvil no hay telón — el contenido se muestra directamente
+  if (window.innerWidth < 1024) return;
+
   // El contenido empieza invisible
   gsap.set(inner, { opacity: 0 });
 
