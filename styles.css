@@ -2120,9 +2120,10 @@ input, textarea, select {
 .footer-legal{font-family:var(--font-body);font-size:.73rem;color:rgba(245,240,232,.18)}
 .footer-legal a{color:rgba(245,240,232,.3);transition:color var(--t-base)}
 .footer-legal a:hover{color:rgba(245,240,232,.6)}
-.footer-crafted{font-family:var(--font-label);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,240,232,.2);display:flex;align-items:center;gap:.4em;margin-top:.4rem}
-.fluentia-logo{height:1.6em;display:inline-block;opacity:.45;filter:brightness(0) invert(1);vertical-align:middle;transition:opacity var(--t-base)}
-.footer-crafted:hover .fluentia-logo{opacity:.7}
+.footer-crafted{font-family:var(--font-label);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,240,232,.28);display:flex;align-items:center;justify-content:center;gap:.5em;margin-top:.8rem}
+.fluentia-link{display:inline-flex;align-items:center}
+.fluentia-logo{height:1.9em;display:inline-block;opacity:.5;filter:brightness(0) invert(1);vertical-align:middle;transition:opacity var(--t-base)}
+.fluentia-link:hover .fluentia-logo{opacity:.85}
 
 @media(max-width:700px){
   .footer-top{grid-template-columns:1fr}
