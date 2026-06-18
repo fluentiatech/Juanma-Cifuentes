@@ -139,15 +139,38 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 /* ================================================================
    5. SMOOTH ANCHOR SCROLLING
    ================================================================ */
+function forceRevealInView() {
+  // Revela .reveal que ya están en pantalla (GSAP scroll-jump los deja ocultos)
+  qsa('.reveal').forEach(r => {
+    const rect = r.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) r.classList.add('in-view');
+  });
+  // Recalcula posiciones de ScrollTrigger tras salto programático
+  if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+}
+
 document.addEventListener('click', (e) => {
   const anchor = e.target.closest('a[href^="#"]');
   if (!anchor) return;
   const target = qs(anchor.getAttribute('href'));
   if (!target) return;
   e.preventDefault();
+
   const mobileOffset = window.innerWidth < 1024 ? 56 : 0;
-  const top = target.getBoundingClientRect().top + window.scrollY - mobileOffset;
-  window.scrollTo({ top, behavior: 'smooth' });
+  // offsetTop ignora transforms de GSAP (getBoundingClientRect los incluiría)
+  let absTop = 0;
+  let el = target;
+  while (el) { absTop += el.offsetTop; el = el.offsetParent; }
+
+  // Si el drawer está abierto, esperar a que cierre antes de scrollar
+  const drawer = qs('#nav-drawer');
+  const delay  = drawer?.classList.contains('open') ? 260 : 0;
+
+  setTimeout(() => {
+    window.scrollTo({ top: absTop - mobileOffset, behavior: 'smooth' });
+    // Forzar reveal de elementos en pantalla al aterrizar
+    setTimeout(forceRevealInView, 700);
+  }, delay);
 });
 
 /* ================================================================
@@ -1403,7 +1426,7 @@ window.addEventListener('resize', () => {
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px' });
 
   els.forEach((el) => io.observe(el));
 })();
@@ -1411,7 +1434,12 @@ window.addEventListener('resize', () => {
 /* Refresh ScrollTrigger cuando todo esté cargado para corregir
    posiciones si la página cargó con scroll distinto de 0 */
 window.addEventListener('load', () => {
-  if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+  if (typeof ScrollTrigger !== 'undefined') {
+    ScrollTrigger.refresh();
+    // Segunda pasada: imágenes lazy pueden haber cambiado alturas
+    setTimeout(() => ScrollTrigger.refresh(), 500);
+  }
+  forceRevealInView();
 });
 
 /* Protección básica contra descarga de imágenes */
