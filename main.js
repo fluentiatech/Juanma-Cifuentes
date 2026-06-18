@@ -924,9 +924,9 @@ window.addEventListener('resize', () => {
 
   const WORKS=[
     /* — CINE — */
-    {y:2025,t:"La huella del mal",m:"Cine · Carlos Béjar",type:"cine",side:"up",img:"C1.jpeg"},
+    {y:2025,t:"La huella del mal",m:"Cine · Carlos Béjar",type:"cine",side:"up",img:"public/HuellaMal.jpeg"},
     {y:2023,t:"He pescado",m:"Cine · Cortometraje",type:"cine",side:"down",img:"public/HePescado.jpeg"},
-    {y:2018,t:"El club de los buenos infieles",m:"Cine · Juan · Netflix",type:"cine",side:"down",img:"C3.jpg"},
+    {y:2018,t:"El club de los buenos infieles",m:"Cine · Juan · Netflix",type:"cine",side:"down",img:"public/ClubBuenosInfieles.jpg"},
     /* — TV — */
     {y:2025,t:"Sin Gluten",m:"TV · TVE",type:"tv",side:"down",img:"public/SinGluten.jpeg"},
     {y:2025,t:"Custodia repartida",m:"TV · Disney+ · Fesser",type:"tv",side:"up",img:null},
@@ -937,7 +937,7 @@ window.addEventListener('resize', () => {
     {y:2019,t:"45 Revoluciones",m:"TV · Antena 3 / Netflix",type:"tv",side:"up",img:null},
     {y:2018,t:"La catedral del mar",m:"TV · Miquel · Netflix/A3",type:"tv",side:"up",img:"public/CatedralMar.jpeg"},
     {y:2015,t:"La que se avecina",m:"TV · Rogelio · Tele5",type:"tv",side:"up",img:"public/LaQueSeAvecina.webp"},
-    {y:2014,t:"Gym Tony",m:"TV · Miguelón · Cuatro",type:"tv",side:"down",img:"gymtony.webp"},
+    {y:2014,t:"Gym Tony",m:"TV · Miguelón · Cuatro",type:"tv",side:"down",img:"public/GymTony.webp"},
     {y:2012,t:"Stamos Okupados",m:"TV · TVE",type:"tv",side:"down",img:"public/StamosOcupados.jpeg"},
     {y:2009,t:"Amar en tiempos revueltos",m:"TV · TVE",type:"tv",side:"down",img:null},
     {y:2007,t:"Síndrome de Ulises",m:"TV · TVE",type:"tv",side:"up",img:"public/SindromeUlises.jpeg"},
@@ -945,7 +945,7 @@ window.addEventListener('resize', () => {
     {y:2003,t:"Aquí no hay quien viva",m:"TV · Agustín/Rafa · Antena 3",type:"tv",side:"down",img:"public/AquiNoHayQuienViva.webp"},
     /* — TEATRO — */
     {y:2026,t:"El jardín de los cerezos",m:"Teatro · Pérez de la Fuente · Fernán Gómez",type:"teatro",side:"down",img:"public/JardinCerezos.jpg"},
-    {y:2024,t:"Don Juan Tenorio",m:"Teatro · Cristófano · Fernán Gómez",type:"teatro",side:"up",img:"Juanma-Cifuentes-Don-Juan-Tenorio.jpg"},
+    {y:2024,t:"Don Juan Tenorio",m:"Teatro · Cristófano · Fernán Gómez",type:"teatro",side:"up",img:"public/DonJuanTenorio.jpg"},
     {y:2012,t:"Figuración especial con frase",m:"Teatro · Trujillo · Albacete",type:"teatro",side:"down",img:null},
     {y:2011,t:"Más se perdió en Cuba",m:"Teatro · Musical · T. Circo, Albacete",type:"teatro",side:"up",img:"public/MasPerdioCuba.jpeg"},
     {y:2009,t:"Asma de copla",m:"Teatro · Andrés Ermitaño · T. de la Paz",type:"teatro",side:"down",img:"public/AsmaCopla.jpeg"},
@@ -1237,7 +1237,7 @@ window.addEventListener('resize', () => {
       miguelon:{
         name:'Miguelón',
         obra:'Gym Tony · Cuatro',
-        img:'gymtony.webp',
+        img:'public/GymTony.webp',
         desc:'Afable, optimista y bienintencionado. Siempre a dieta, siempre en ropa de deporte, siempre con la promesa de empezar mañana. El motor cómico del grupo: el que más promete, el que menos cumple, y con quien todo el mundo conecta de inmediato porque es imposible no quererle.'
       },
       rafa:{
@@ -1249,13 +1249,13 @@ window.addEventListener('resize', () => {
       sancho:{
         name:'Sancho Panza',
         obra:'El hombre de La Mancha · teatro',
-        img:'defensasancho.avif',
+        img:'public/SanchoPanza.avif',
         desc:'El escudero más querido de la literatura: gordo, pragmático, leal y sensato frente a la locura idealista de su amo. Contradice a Don Quijote y a la vez lo sigue hasta el fin. Más profundo de lo que parece: Sancho es quien al final más cree en el sueño del caballero.'
       },
       hamlet:{
         name:'Hamlet',
         obra:'Hamlet · teatro',
-        img:'R2.jpg',
+        img:'public/Hamlet.jpg',
         desc:'El príncipe de Dinamarca. Inteligente, indeciso, filosófico, al borde de la locura — o perfectamente lúcido fingiendo estarlo. El que le da mil vueltas a todo antes de actuar. Un rol que exige el máximo registro dramático y vocal, muy alejado de cualquier personaje cómico.'
       },
       friman:{
@@ -1267,7 +1267,7 @@ window.addEventListener('resize', () => {
       bejar:{
         name:'Carlos Béjar',
         obra:'La huella del mal · 2025',
-        img:'C1.jpeg',
+        img:'public/HuellaMal.jpeg',
         desc:'El taxidermista que se escapó de la justicia. Frío, perturbador, ritual. El papel más alejado del registro habitual de Cifuentes: un antagonista que mata siguiendo ritos prehistóricos. Demostración de su alcance dramático fuera de la comedia. El que siempre tiene un plan y siempre lo ejecuta.'
       },
       rogelio:{
@@ -1279,13 +1279,13 @@ window.addEventListener('resize', () => {
       taxista:{
         name:'El taxista',
         obra:'Atasco · Prime Video',
-        img:'atasco.png',imgPos:'right center',
+        img:'public/Atasco.png',imgPos:'right center',
         desc:'Atrapado en un inmenso atasco a las afueras de Madrid, repite a lo largo de cinco episodios viviendo su pequeña historia dentro del gran mosaico de la serie. Sin apellidos, sin backstory, puro presente y situación. El que siempre llega donde hace falta, sin preguntas.'
       },
       cristofano:{
         name:'Cristófano Butarelli',
         obra:'Don Juan Tenorio · Teatro Fernán Gómez',
-        img:'Juanma-Cifuentes-Don-Juan-Tenorio.jpg',
+        img:'public/DonJuanTenorio.jpg',
         desc:'El posadero italiano donde arranca la acción. Sirve vino y escucha cómo Don Juan y Don Luis se jactan de sus conquistas. Rol secundario con mucho sabor: presencia física, carácter, testigo cómplice. El que siempre está en el sitio exacto donde ocurren las cosas importantes.'
       },
       miquel:{
