@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://juanmacifuentes.com/sitemap.xml
+Sitemap: https://juanmacifuentes.es/sitemap.xml

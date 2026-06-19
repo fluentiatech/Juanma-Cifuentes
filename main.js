@@ -1431,6 +1431,40 @@ window.addEventListener('resize', () => {
   els.forEach((el) => io.observe(el));
 })();
 
+/* ================================================================
+   CONFIRMACIÓN DESCARGA EN MÓVIL
+   ================================================================ */
+(function initDownloadConfirm() {
+  const panel    = qs('#foto-confirm');
+  const backdrop = qs('#foto-confirm-backdrop');
+  const preview  = panel?.querySelector('.foto-confirm-preview');
+  const cancelBtn = qs('#foto-confirm-cancel');
+  const okLink   = qs('#foto-confirm-ok');
+  if (!panel) return;
+
+  function close() {
+    panel.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.foto-dl').forEach(link => {
+    link.addEventListener('click', e => {
+      // Solo interceptar en móvil / touch
+      if (window.innerWidth >= 1024) return;
+      e.preventDefault();
+      preview.src = link.href;
+      okLink.href = link.href;
+      okLink.download = link.getAttribute('download') || '';
+      panel.hidden = false;
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  okLink?.addEventListener('click', () => setTimeout(close, 300));
+  cancelBtn?.addEventListener('click', close);
+  backdrop?.addEventListener('click', close);
+})();
+
 /* Refresh ScrollTrigger cuando todo esté cargado para corregir
    posiciones si la página cargó con scroll distinto de 0 */
 window.addEventListener('load', () => {
