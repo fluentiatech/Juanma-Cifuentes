@@ -145,8 +145,9 @@ function forceRevealInView() {
     const rect = r.getBoundingClientRect();
     if (rect.top < window.innerHeight && rect.bottom > 0) r.classList.add('in-view');
   });
-  // Recalcula posiciones de ScrollTrigger tras salto programático
-  if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+  // NOTA: NO llamar ScrollTrigger.refresh() aquí — internamente salta el scroll
+  // a 0 para medir posiciones, lo que interrumpe cualquier smooth scroll en curso.
+  // El refresh se hace en window.load y en resize, que son los momentos correctos.
 }
 
 document.addEventListener('click', (e) => {
