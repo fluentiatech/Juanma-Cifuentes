@@ -2782,19 +2782,21 @@ input, textarea, select {
 
 
 /* ---------- 5 · JUANMA SIN FILTROS ---------- */
-.jo{background:var(--color-fondo);color:var(--color-texto);overflow:hidden}
-.jo-header{text-align:center;max-width:52ch;margin:0 auto clamp(3rem,7vh,5rem)}
-.jo-intro{color:var(--color-texto-sec);font-size:1.05rem;line-height:1.65;margin-top:.8em}
+.jo{background:var(--color-fondo);color:var(--color-texto);overflow-x:clip}
+.jo-header{text-align:center;max-width:52ch;margin:0 auto clamp(2rem,5vh,4rem)}
+.jo-intro{color:var(--color-texto-sec);font-size:clamp(.9rem,1.1vw,1.05rem);line-height:1.65;margin-top:.8em}
 
 /* Stage: masonry con columnas CSS — fotos y cards mezclados */
 .jo-stage{
   columns:3;
-  column-gap:clamp(1rem,2vw,1.5rem);
+  column-gap:clamp(.75rem,1.5vw,1.5rem);
+  /* padding lateral para que las rotaciones no queden recortadas por overflow */
+  padding:0 2px 2rem;
 }
 .jo-portrait,.jo-card{
   break-inside:avoid;
   display:block;
-  margin-bottom:clamp(1rem,2vw,1.5rem);
+  margin-bottom:clamp(.75rem,1.5vw,1.5rem);
 }
 
 /* Fotos */
@@ -2810,7 +2812,7 @@ input, textarea, select {
   background:var(--color-fondo-alt);
   border:1px solid rgba(201,168,76,.18);
   border-radius:10px;
-  padding:clamp(1.2rem,2.5vw,1.6rem);
+  padding:clamp(.9rem,1.8vw,1.6rem);
   box-shadow:0 8px 28px rgba(0,0,0,.28);
   transform:rotate(var(--card-tilt,0deg));
   transition:transform .35s var(--ease-out),box-shadow .35s;
@@ -2820,15 +2822,22 @@ input, textarea, select {
   transform:rotate(0deg) translateY(-5px) !important;
   box-shadow:0 20px 48px rgba(0,0,0,.4);
 }
-.jo-card-emoji{font-size:1.8rem;line-height:1;display:block;margin-bottom:.5em}
+.jo-card-emoji{font-size:clamp(1.4rem,1.8vw,1.8rem);line-height:1;display:block;margin-bottom:.5em}
 .jo-card-title{font-family:var(--font-display);font-weight:700;
-  font-size:clamp(.95rem,1.6vw,1.2rem);color:#fff;
+  font-size:clamp(.85rem,1.3vw,1.2rem);color:#fff;
   margin:0 0 .45em;line-height:1.15}
-.jo-card-body{color:rgba(245,240,232,.78);font-size:.9rem;line-height:1.6;margin:0}
+.jo-card-body{color:rgba(245,240,232,.78);font-size:clamp(.78rem,1vw,.9rem);line-height:1.6;margin:0}
 
-/* Responsive */
-@media(max-width:860px){.jo-stage{columns:2}}
-@media(max-width:480px){.jo-stage{columns:1}.jo-portrait{transform:none !important}}
+/* Responsive — portátil mediano (MacBook 13-14") */
+@media(max-width:1100px){
+  .jo-stage{columns:2;column-gap:clamp(.75rem,2vw,1.25rem)}
+  /* Sin rotación en 2 columnas: más espacio, menos riesgo de recorte */
+  .jo-portrait{transform:none !important}
+  .jo-card{transform:none !important}
+  .jo-card:hover{transform:translateY(-4px) !important}
+}
+@media(max-width:600px){.jo-stage{columns:1}}
+@media(max-width:480px){.jo-portrait{transform:none !important}}
 
 /* ===== Failsafe: si main.js no se ejecuta, no dejar pantalla de carga colgada ===== */
 #loading-screen { animation: ls-failsafe 0s linear 4s forwards; }
