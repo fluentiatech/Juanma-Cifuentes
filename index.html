@@ -892,7 +892,18 @@
           </div>
 
           <div class="contacto-form-col">
-            <form class="contacto-form" id="contacto-form" action="https://formspree.io/f/XXXXX" method="POST" novalidate aria-label="Formulario de contacto directo">
+            <!-- FormSubmit.co — los mensajes llegan a elcifuentes@gmail.com.
+                 La PRIMERA vez que se envíe un mensaje, FormSubmit manda un correo de
+                 activación a ese Gmail: hay que pulsar "Activate" una sola vez. Después funciona solo.
+                 Sin registro ni claves. -->
+            <form class="contacto-form" id="contacto-form" action="https://formsubmit.co/ajax/elcifuentes@gmail.com" method="POST" novalidate aria-label="Formulario de contacto directo">
+              <!-- Asunto del email que recibe Juanma -->
+              <input type="hidden" name="_subject" value="Nuevo mensaje desde juanmacifuentes.es">
+              <!-- Email en formato tabla (más legible) y sin captcha para el envío AJAX -->
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <!-- Honeypot anti-spam (los bots lo rellenan, las personas no lo ven) -->
+              <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
               <div class="form-group">
                 <label class="form-label" for="campo-nombre">Nombre</label>
                 <input class="form-input" type="text" id="campo-nombre" name="nombre" autocomplete="name" required aria-required="true" aria-describedby="error-nombre">
